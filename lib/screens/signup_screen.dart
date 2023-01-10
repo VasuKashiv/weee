@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_unnecessary_containers
 
 import 'package:flutter/material.dart';
+import 'package:weee/utils/style_constants.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -62,7 +63,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     Expanded(
                       child: Material(
                         shape: Border(
-                          // ignore: dead_code
                           bottom: BorderSide(color: Colors.green, width: 3.0),
                         ),
                         child: TextButton(
@@ -85,57 +85,60 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ],
                 ),
               ),
-              Container(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      TextField(
-                        decoration: InputDecoration(
-                          hintStyle: TextStyle(color: Colors.blue),
-                          hintText: 'Enter your name',
-                          labelText: 'Name',
-                          border: OutlineInputBorder(),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.45,
+                child: Container(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        TextField(
+                          decoration: InputDecoration(
+                            hintStyle: kHintStyle,
+                            hintText: 'Enter your name',
+                            labelText: 'Name',
+                            border: OutlineInputBorder(),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                          hintStyle: TextStyle(color: Colors.blue),
-                          hintText: 'Enter your email address',
-                          labelText: 'Email',
-                          border: OutlineInputBorder(),
+                        SizedBox(
+                          height: 30,
                         ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      TextField(
-                        decoration: InputDecoration(
-                          hintStyle: TextStyle(color: Colors.blue),
-                          hintText: 'Enter your phone number',
-                          labelText: 'Phone',
-                          border: OutlineInputBorder(),
+                        TextField(
+                          decoration: InputDecoration(
+                            hintStyle: kHintStyle,
+                            hintText: 'Enter your email address',
+                            labelText: 'Email',
+                            border: OutlineInputBorder(),
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      TextField(
-                        obscureText: true,
-                        obscuringCharacter: '*',
-                        decoration: InputDecoration(
-                          hintStyle: TextStyle(color: Colors.blue),
-                          hintText: 'Enter your password',
-                          labelText: 'Password',
-                          border: OutlineInputBorder(),
+                        SizedBox(
+                          height: 30,
                         ),
-                      ),
-                    ],
+                        TextField(
+                          decoration: InputDecoration(
+                            hintStyle: kHintStyle,
+                            hintText: 'Enter your phone number',
+                            labelText: 'Phone',
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        ),
+                        TextField(
+                          obscureText: true,
+                          obscuringCharacter: '*',
+                          decoration: InputDecoration(
+                            hintStyle: kHintStyle,
+                            hintText: 'Enter your password',
+                            labelText: 'Password',
+                            border: OutlineInputBorder(),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -149,7 +152,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       value: val,
                       onChanged: (value) {
                         setState(() {
-                          value = !val;
+                          val = value!;
                         });
                       },
                     ),

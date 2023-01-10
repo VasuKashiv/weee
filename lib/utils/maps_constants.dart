@@ -8,5 +8,5 @@ class AppConstants {
 
   static const String mapBoxStyleId = 'clc21qyoq005z14oxxt3qwz8q';
 
-  static final myLocation = LatLng(28.9845, 77.7064);
+  static final myLocation = LatLng(28.6139, 77.2090);
 }

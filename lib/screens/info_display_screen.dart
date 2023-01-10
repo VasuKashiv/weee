@@ -13,94 +13,81 @@ class _InfoDisplayScreenState extends State<InfoDisplayScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         resizeToAvoidBottomInset: false,
-        body: SizedBox(
-          // height: 400000,
+        body: SingleChildScrollView(
           child: Column(
-            // mainAxisSize: MainAxisSize.max,
             children: [
               Stack(
-                // fit: StackFit.passthrough,
                 clipBehavior: Clip.none,
                 children: [
-                  Positioned(
-                    child: Image.network(
-                      'https://thumbs.dreamstime.com/z/mobile-phone-scrap-pile-damage-46322322.jpg',
-                      height: MediaQuery.of(context).size.height * 0.17,
-                      width: MediaQuery.of(context).size.width,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
-                  Positioned(
-                    top: MediaQuery.of(context).size.height * 0.17,
+                  Image.network(
+                    'https://thumbs.dreamstime.com/z/mobile-phone-scrap-pile-damage-46322322.jpg',
+                    height: MediaQuery.of(context).size.height * 0.17,
                     width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height * 0.26,
-                    child: Container(
-                      margin: EdgeInsets.only(
-                          top: MediaQuery.of(context).size.height * 0.13),
+                    fit: BoxFit.fill,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.3),
 
-                      child: Column(
-                        children: [
-                          GestureDetector(
-                            onTap: (() {
-                              Navigator.pushNamed(context, '/rating');
-                            }),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 20, right: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Icon(
-                                    Icons.star,
-                                    size: 32,
-                                  ),
-                                  Text(
-                                    '4.5 (289 reviews)',
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                  SizedBox(
-                                    width: 160,
-                                  ),
-                                  Icon(Icons.arrow_forward_ios),
-                                ],
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Icon(
+                                Icons.star,
+                                size: 32,
                               ),
+                              Text(
+                                '4.5 (289 reviews)',
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              SizedBox(
+                                width: 160,
+                              ),
+                              IconButton(
+                                  onPressed: (() {
+                                    Navigator.pushNamed(context, '/rating');
+                                  }),
+                                  icon: Icon(Icons.arrow_forward_ios)),
+                            ],
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.grey,
+                        ),
+                        InkWell(
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20, right: 20),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                Icon(
+                                  Icons.fire_truck,
+                                  size: 32,
+                                ),
+                                Text(
+                                  'Pickup in 20 mins',
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                SizedBox(
+                                  width: 160,
+                                ),
+                                IconButton(
+                                    onPressed: (() {}),
+                                    icon: Icon(Icons.arrow_forward_ios)),
+                              ],
                             ),
                           ),
-                          Divider(
-                            color: Colors.grey,
-                          ),
-                          GestureDetector(
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 20, right: 20),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Icon(
-                                    Icons.fire_truck,
-                                    size: 32,
-                                  ),
-                                  Text(
-                                    'Pickup in 20 mins',
-                                    style: TextStyle(fontSize: 20),
-                                  ),
-                                  SizedBox(
-                                    width: 160,
-                                  ),
-                                  Icon(Icons.arrow_forward_ios),
-                                ],
-                              ),
-                            ),
-                          ),
-                          Divider(
-                            color: Colors.grey,
-                          ),
-                        ],
-                      ),
-                      // height: 300,
+                        ),
+                        Divider(
+                          color: Colors.grey,
+                        ),
+                      ],
                     ),
+                    // height: 300,
                   ),
                   Positioned(
                     top: MediaQuery.of(context).size.height * 0.12,
@@ -179,41 +166,35 @@ class _InfoDisplayScreenState extends State<InfoDisplayScreen> {
                       ),
                     ),
                   ),
-                  Positioned(
-                    top: MediaQuery.of(context).size.height * 0.44,
-                    width: MediaQuery.of(context).size.width,
-                    // height: 220,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 30, right: 30),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'Sell Your',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1.2),
-                          ),
-                          Text(
-                            'View All',
-                            style: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 1.2,
-                                color: Colors.grey),
-                          )
-                        ],
-                      ),
+                  Container(
+                    margin:
+                        const EdgeInsets.only(left: 30, right: 30, top: 380),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Sell Your',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.2),
+                        ),
+                        Text(
+                          'View All',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.2,
+                              color: Colors.grey),
+                        )
+                      ],
                     ),
                   ),
-                  Positioned(
-                    top: MediaQuery.of(context).size.height * 0.47,
+                  Container(
+                    margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.47),
                     width: MediaQuery.of(context).size.width,
-
-                    // height: MediaQuery.of(context).size.height * 1.2,
-                    child: SizedBox(
-                      height: 11700,
+                    child: Expanded(
                       child: GridView.builder(
                           shrinkWrap: true,
                           physics: ScrollPhysics(),
@@ -232,7 +213,7 @@ class _InfoDisplayScreenState extends State<InfoDisplayScreen> {
                             );
                           })),
                     ),
-                  )
+                  ),
                 ],
               ),
             ],

@@ -52,6 +52,9 @@ class LoginScreen extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             vertical: 0, horizontal: 50),
                         child: TextFormField(
+                          style: TextStyle(
+                            fontSize: 25,
+                          ),
                           decoration: const InputDecoration(
                               hintText: 'Username or Email',
                               hintStyle:
@@ -64,6 +67,9 @@ class LoginScreen extends StatelessWidget {
                         child: TextFormField(
                           obscureText: true,
                           obscuringCharacter: '*',
+                          style: TextStyle(
+                            fontSize: 25,
+                          ),
                           decoration: const InputDecoration(
                               hintText: 'Password',
                               hintStyle:

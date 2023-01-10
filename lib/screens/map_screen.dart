@@ -44,7 +44,7 @@ class _MapsScreenState extends State<MapsScreen> {
                         return GestureDetector(
                           onTap: () {},
                           child: Image.network(
-                            'https://w7.pngwing.com/pngs/731/25/png-transparent-location-icon-computer-icons-google-map-maker-marker-pen-cartodb-map-marker-heart-logo-color-thumbnail.png',
+                            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUtaEAIaXW0jktXeKuM3ljNt9o1boZpcSBWFBpxv4&s',
                           ),
                         );
                       })

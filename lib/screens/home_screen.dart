@@ -63,7 +63,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: TextField(
                         decoration: InputDecoration(
                           filled: true,
-                          prefixIcon: Icon(Icons.search),
+                          prefixIcon: Icon(
+                            Icons.search,
+                            size: 32,
+                          ),
                           fillColor: Color.fromARGB(255, 212, 212, 212),
                           hintText: 'Search',
                           hintStyle: TextStyle(
@@ -72,9 +75,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                           border: InputBorder.none,
                         ),
-                        style: TextStyle(
-                          color: Colors.black,
-                        ),
+                        style: TextStyle(color: Colors.black, fontSize: 25),
                       ),
                     ),
                     SizedBox(

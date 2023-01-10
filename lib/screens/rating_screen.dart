@@ -78,10 +78,12 @@ class _RatingScreenState extends State<RatingScreen> {
                         direction: Axis.horizontal,
                         allowHalfRating: true,
                         itemCount: 5,
-                        itemBuilder: (context, _) => Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                        ),
+                        itemBuilder: (context, _) {
+                          return Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          );
+                        },
                         onRatingUpdate: (rating) {
                           print(rating);
                         },
@@ -312,10 +314,13 @@ class _RatingScreenState extends State<RatingScreen> {
                                 top: 20, left: 30, right: 30),
                             child: TextFormField(
                               maxLines: 6,
+
                               // controller: _controllerFeedback,
                               decoration: InputDecoration(
                                 hintText:
                                     'Please provide your valuable feedback',
+                                hintStyle: TextStyle(
+                                    color: Color.fromARGB(255, 86, 86, 86)),
                                 filled: true,
                                 fillColor: Color.fromARGB(255, 221, 221, 221),
                                 border: OutlineInputBorder(
